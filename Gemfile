@@ -5,21 +5,17 @@ gem 'pg'
 gem 'devise'
 
 #assets
-gem 'sass-rails', '~> 5.0'
+gem 'sass-rails', '~> 5.0.4'
 gem 'uglifier', '>= 1.3.0'
-gem 'coffee-rails', '~> 4.1.0'
+gem 'coffee-rails'
 gem 'jquery-rails'
 gem 'turbolinks'
-gem 'jbuilder', '~> 2.0'
+gem 'jbuilder', '~> 1.2'
 gem 'simple_form'
 
 #bootstrap
-gem "therubyracer"
-gem "less-rails"
-gem "twitter-bootstrap-rails"
-gem "font-awesome-rails"
-gem 'bootstrap-daterangepicker-rails'
-gem 'momentjs-rails'
+gem 'bootstrap-sass', '~> 3.3.6'
+gem 'font-awesome-rails', '4.3.0.0'
 
 group :development, :test do
   gem 'rspec-rails', '~> 3.0'
