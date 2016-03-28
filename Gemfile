@@ -12,6 +12,8 @@ gem 'jquery-rails'
 gem 'turbolinks'
 gem 'jbuilder', '~> 1.2'
 gem 'simple_form'
+# Heroku
+gem "rails_12factor"
 
 #bootstrap
 gem 'bootstrap-sass', '~> 3.3.6'
