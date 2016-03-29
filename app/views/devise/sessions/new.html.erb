@@ -1,0 +1,21 @@
+<div class="middle-box text-center ;loginscreen  animated fadeInDown">
+  <div>
+    <div><h1 class="logo-name">CCIH+</h1></div>
+    <h3>Bem Vindo ao SisCCIH+</h3>
+    <p>Sistema para controle de infecções hospitalares.</p>
+    <p>Logar para ver a reação.</p>
+
+    <%= form_for(resource, as: resource_name, url: session_path(resource_name), class: 'm-t') do |f| %>
+      <%= devise_error_messages! %>
+
+      <%= f.text_field :login, autofocus: true, placeholder: "Nome Usuário", class: 'form-control form-group', required: true %>
+      <%= f.password_field :password, required: false, class: 'form-control form-group', placeholder: "Senha", required: true %>
+      <%= f.submit "Logar", class: "btn btn-primary block full-width m-b" %>
+
+      <a href="#"><small>Esqueceu a senha ?</small></a>
+      <p class="text-muted text-center"><small>Não possui acesso ? Contacte seu administrador </small></p>
+    <%end%>
+
+    <p class="m-t"> <small> &copy; 2016</small> </p>
+  </div>
+</div>
