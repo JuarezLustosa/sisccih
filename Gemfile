@@ -12,6 +12,7 @@ gem 'jquery-rails'
 gem 'turbolinks'
 gem 'jbuilder', '~> 1.2'
 gem "responders"
+gem "simple_form"
 # Heroku
 gem "rails_12factor"
 

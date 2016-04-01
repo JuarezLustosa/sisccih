@@ -18,7 +18,11 @@
             <li><a href="">Contacts</a></li>
             <li><a href="">Mailbox</a></li>
             <li class="divider"></li>
-            <li><a href="">Logout</a></li>
+            <li>
+              <% if current_user %>
+                <%= link_to "Deslogar", destroy_user_session_path, :method=>'delete' %>
+              <% end %>
+            </li>
           </ul>
         </div>
         <div class="logo-element">
@@ -33,7 +37,7 @@
         </a>
 
         <ul class="nav nav-second-level collapse <%= is_active_controller('forms') %>">
-          <li class="<%= is_active_action('basic_forms') %>"><%= link_to "Usuários", root_path %></li>
+          <li class="<%= is_active_action('basic_forms') %>"><%= link_to "Usuários", users_admin_index_path %></li>
         </ul>
       </li>
 

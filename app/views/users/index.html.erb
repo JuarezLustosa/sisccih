@@ -1,0 +1,75 @@
+<div class="row wrapper border-bottom white-bg page-heading">
+  <div class="col-lg-10">
+    <h2>Administrador</h2>
+    <ol class="breadcrumb">
+      <li>
+        <%= link_to "Home", root_path %>
+      </li>
+      <li>
+        <a>Cadastros</a>
+      </li>
+      <li class="active">
+        <strong>Usuários</strong>
+      </li>
+    </ol>
+  </div>
+</div>
+
+<div class="row">
+  <div class="col-lg-12">
+    <div class="wrapper wrapper-content animated fadeInUp">
+      <div class="ibox">
+        <div class="ibox-title">
+          <h5>Lista de todos os usuários registrados</h5>
+          <div class="ibox-tools">
+            <%= link_to "Cadastrar Usuário", new_users_admin_path, class: "btn btn-primary btn-xs" %>
+          </div>
+        </div>
+
+        <div class="ibox-content">
+          <div class="row m-b-sm m-t-sm">
+            <div class="col-md-11">
+              <div class="input-group">
+                <input type="text" placeholder="Search" class="input-sm form-control">
+                  <span class="input-group-btn">
+                    <button type="button" class="btn btn-sm btn-primary"> Go!</button>
+                  </span>
+              </div>
+            </div>
+          </div>
+
+          <div class="project-list">
+            <table class="table table-hover">
+              <tbody>
+                <% @users.each do |user| %>
+                  <tr>
+                    <td class="project-status">
+                      <span class="label label-primary">Active</span>
+                    </td>
+                    <td class="contact-type"><i class="fa fa-user"> </i></td>
+                    <td class="project-title">
+                    <%= link_to "#{user.username}", users_admin_path(user)%>
+                    <br />
+                    <small>Criado em <%=l user.created_at %></small>
+                    </td>
+
+                    <td class="contact-type"><i class="fa fa-envelope"> </i></td>
+                    <td> <%= user.email %></td>
+
+                    <td class="project-actions">
+                      <%= link_to users_admin_path(user), class:   "btn btn-white btn-sm" do %>
+                        <i class="fa fa-pencil"></i> Editar
+                      <% end %>
+                    </td>
+                  </tr>
+                <% end %>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+

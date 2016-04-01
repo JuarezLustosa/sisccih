@@ -110,8 +110,10 @@
 
 
       <li>
-        <a href="<%= %>">
-        <i class="fa fa-sign-out"></i> Log out
+
+        <% if current_user %>
+          <%= link_to '<i class="fa fa-sign-out"></i> Deslogar'.html_safe, destroy_user_session_path, :method=>'delete' %>
+        <% end %>
       </a>
     </li>
 
