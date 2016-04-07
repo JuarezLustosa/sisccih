@@ -3,6 +3,10 @@ source 'https://rubygems.org'
 gem 'rails', '4.2.5'
 gem 'pg'
 gem 'devise'
+gem "responders"
+gem "simple_form"
+gem 'ransack'
+gem 'will_paginate-bootstrap'
 
 #assets
 gem 'sass-rails', '~> 5.0.4'
@@ -11,8 +15,6 @@ gem 'coffee-rails'
 gem 'jquery-rails'
 gem 'turbolinks'
 gem 'jbuilder', '~> 1.2'
-gem "responders"
-gem "simple_form"
 # Heroku
 gem "rails_12factor"
 

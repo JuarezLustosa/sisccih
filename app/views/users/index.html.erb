@@ -1,20 +1,4 @@
-<div class="row wrapper border-bottom white-bg page-heading">
-  <div class="col-lg-10">
-    <h2>Administrador</h2>
-    <ol class="breadcrumb">
-      <li>
-        <%= link_to "Home", root_path %>
-      </li>
-      <li>
-        <a>Cadastros</a>
-      </li>
-      <li class="active">
-        <strong>Usuários</strong>
-      </li>
-    </ol>
-  </div>
-</div>
-
+<%= render "header" %>
 <div class="row">
   <div class="col-lg-12">
     <div class="wrapper wrapper-content animated fadeInUp">
@@ -28,43 +12,34 @@
 
         <div class="ibox-content">
           <div class="row m-b-sm m-t-sm">
-            <div class="col-md-11">
-              <div class="input-group">
-                <input type="text" placeholder="Search" class="input-sm form-control">
-                  <span class="input-group-btn">
-                    <button type="button" class="btn btn-sm btn-primary"> Go!</button>
-                  </span>
+            <div class="col-md-1">
+            </div>
+            <div class="col-md-10">
+              <div class="search-form">
+                  <%= search_form_for @q,
+                      url: users_admin_index_path,
+                      :builder => SimpleForm::FormBuilder,
+                      wrapper: :horizontal_form,
+                      html: { class: "form-horizontal" } do |f| %>
+
+                    <div class="form-group">
+                      <div class="input-group m-b">
+                        <span class="input-group-btn">
+                          <%= link_to "Refresh", users_admin_index_path, class: "btn btn-sm btn-primary" %>
+                        </span>
+                        <%= f.input_field :username_cont, placeholder: "Pesquisar pelo usuário", class: "form-control input-sm" %>
+                        <span class="input-group-btn">
+                          <%= f.button :submit, "Pesquisar", class: "btn btn-sm btn-primary" %>
+                        </span>
+                      </div>
+                    </div>
+                  <div class="hr-line-dashed"></div>
+                  <% end %>
               </div>
             </div>
           </div>
-
           <div class="project-list">
-            <table class="table table-hover">
-              <tbody>
-                <% @users.each do |user| %>
-                  <tr>
-                    <td class="project-status">
-                      <span class="label label-primary">Active</span>
-                    </td>
-                    <td class="contact-type"><i class="fa fa-user"> </i></td>
-                    <td class="project-title">
-                    <%= link_to "#{user.username}", users_admin_path(user)%>
-                    <br />
-                    <small>Criado em <%=l user.created_at %></small>
-                    </td>
-
-                    <td class="contact-type"><i class="fa fa-envelope"> </i></td>
-                    <td> <%= user.email %></td>
-
-                    <td class="project-actions">
-                      <%= link_to users_admin_path(user), class:   "btn btn-white btn-sm" do %>
-                        <i class="fa fa-pencil"></i> Editar
-                      <% end %>
-                    </td>
-                  </tr>
-                <% end %>
-              </tbody>
-            </table>
+            <%= render partial: "users" %>
           </div>
         </div>
       </div>

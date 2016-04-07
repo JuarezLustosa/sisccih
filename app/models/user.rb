@@ -7,7 +7,7 @@ class User < ActiveRecord::Base
 
   attr_accessor :login
   validate :validate_username
-  validates :email, :password, :presence => true
+  validates :email, :presence => true
 
   validates :username,
   :presence => true,

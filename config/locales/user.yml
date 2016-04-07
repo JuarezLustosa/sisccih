@@ -1,0 +1,14 @@
+pt-BR:
+  activerecord:
+    models:
+      user:
+        one: "Usuário"
+        other: "Usuários"
+
+    attributes:
+      user:
+        id: "Código"
+        username: "Login"
+        email: "Email"
+        password: "Senha"
+        current_password: "Senha Atual"

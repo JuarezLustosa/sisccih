@@ -1,6 +1,7 @@
 class UsersController < ApplicationController
   def index
-    @users = User.all
+    @q = User.search(params[:q])
+    @users = @q.result(distinct: true).paginate(:page => params[:page], :per_page => 10 )
     respond_with @users
   end
 
@@ -11,7 +12,7 @@ class UsersController < ApplicationController
   def create
     @user = User.new(user_params)
     @user.save
-    respond_with @user
+    respond_with @user, location: users_admin_index_path
   end
 
   def edit
@@ -24,7 +25,7 @@ class UsersController < ApplicationController
     params[:user].delete(:password_confirmation) if params[:user][:password].blank? and params[:user][:password_confirmation].blank?
 
     @user.update_attributes(user_params)
-    respond_with @user
+    respond_with @user, location: users_admin_index_path
   end
 
   def destroy
@@ -32,7 +33,6 @@ class UsersController < ApplicationController
     @user.destroy
     respond_with @user
   end
-
 
   private
 
