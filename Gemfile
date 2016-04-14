@@ -25,6 +25,7 @@ gem 'font-awesome-rails', '4.3.0.0'
 group :development, :test do
   gem 'rspec-rails', '~> 3.0'
   gem 'capybara'
+  gem 'selenium-webdriver'
   gem "database_cleaner"
   gem 'factory_girl_rails'
   gem 'guard-rspec'

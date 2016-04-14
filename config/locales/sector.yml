@@ -1,0 +1,11 @@
+pt-BR:
+  activerecord:
+    models:
+      sector:
+        one: "Serviço"
+        other: "Serviços"
+
+    attributes:
+      sector:
+        id: "Código"
+        name: "Nome"
