@@ -9,4 +9,5 @@ Rails.application.routes.draw do
   root :to => 'home#index'
 
   resources :users_admin, :controller => "users"
+  resources :sectors
 end

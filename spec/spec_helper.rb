@@ -51,7 +51,8 @@ RSpec.configure do |config|
   end
 
   #config.include Loggin::Helper, :type => :request
-  #config.include ExpectError::Helper
+  config.include ExpectError::Helper
+  config.include Dialog::Accept
 
   # rspec-expectations config goes here. You can use an alternate
   # assertion/expectation library such as wrong or the stdlib/minitest
