@@ -33,7 +33,7 @@
     <% unless @sectors.any? %>
       <div class="ibox-content">
         <div class="alert alert-warning">
-          Infelizmente não foram encontrado setores com esse nome.
+          Nenhum serviço encontrado, deseja <%= link_to "Cadastrar", new_sector_path %> ?
         </div>
       </div>
     <% end %>
