@@ -1,0 +1,40 @@
+<%= render "header" %>
+
+<div class="row">
+  <div class="col-lg-12">
+    <div class="ibox float-e-margins">
+
+      <div class="ibox-title">
+        <h5>Materiais</h5>
+        <div class="ibox-tools">
+          <a class="collapse-link">
+            <i class="fa fa-chevron-up"></i>
+          </a>
+        </div>
+      </div>
+
+        <div class="ibox-content">
+        <%= simple_form_for @material,
+          html: {class: "form-horizontal"},
+          wrapper: :horizontal_form do |f| %>
+
+          <%= f.error_notification %>
+
+          <div class="form-group">
+            <div class="col-sm-12">
+              <%= f.input :description, class: "form-control", autofocus: true %>
+            </div>
+          </div>
+
+          <div class="hr-line-dashed"></div>
+          <div class="form-group">
+            <div class="col-sm-4 col-sm-offset-2">
+              <%= link_to "Cancelar", materials_path, :class => 'btn btn-white' %>
+              <%= f.button :submit, "Salvar", :class => 'btn btn-primary' %>
+            </div>
+          </div>
+        <% end %>
+      </div>
+    </div>
+  </div>
+</div>

@@ -10,4 +10,5 @@ Rails.application.routes.draw do
 
   resources :users_admin, :controller => "users"
   resources :sectors
+  resources :materials
 end
