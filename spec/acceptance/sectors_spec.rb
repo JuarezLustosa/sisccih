@@ -28,7 +28,7 @@ feature "Create sectors", %q{
 
     click_button "Salvar"
 
-    expect(page).to have_content "Serviço criado com sucesso."
+    expect(page).to have_content "Serviço criado(a) com sucesso."
     within_table('sectors') do
       expect(page).to have_content "Pediatria"
     end
@@ -49,7 +49,7 @@ feature "Create sectors", %q{
 
     click_button "Salvar"
 
-    expect(page).to have_content "Serviço foi atualizado com sucesso."
+    expect(page).to have_content "Serviço foi atualizado(a) com sucesso."
 
     within_table('sectors') do
       expect(page).to have_content "Ortopedia"
@@ -67,7 +67,7 @@ feature "Create sectors", %q{
     click_link "Apagar"
     dialog_accept
 
-    expect(page).to have_content "Serviço foi removido com sucesso."
+    expect(page).to have_content "Serviço foi removido(a) com sucesso."
   end
 
   scenario "search by name or id" do

@@ -28,7 +28,7 @@ feature "Materials", %q{
 
     click_button "Salvar"
 
-    expect(page).to have_content "Material criado com sucesso."
+    expect(page).to have_content "Material criado(a) com sucesso."
     within_table('materials') do
       expect(page).to have_content "Gase"
     end
@@ -49,7 +49,7 @@ feature "Materials", %q{
 
     click_button "Salvar"
 
-    expect(page).to have_content "Material foi atualizado com sucesso."
+    expect(page).to have_content "Material foi atualizado(a) com sucesso."
 
     within_table('materials') do
       expect(page).to have_content "Bisturi"
@@ -67,7 +67,7 @@ feature "Materials", %q{
     click_link "Apagar"
     dialog_accept
 
-    expect(page).to have_content "Material foi removido com sucesso."
+    expect(page).to have_content "Material foi removido(a) com sucesso."
   end
 
   scenario "search by name or id" do

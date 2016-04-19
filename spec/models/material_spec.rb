@@ -16,5 +16,4 @@ RSpec.describe Material, type: :model do
     expect(material).to be_invalid
     expect_error_on material, method: :description
   end
-
 end
